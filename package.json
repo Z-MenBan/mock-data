@@ -1,0 +1,13 @@
+{
+  "name": "mock-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "test": "node ./test/index.test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "mockjs": "^1.1.0"
+  }
+}
