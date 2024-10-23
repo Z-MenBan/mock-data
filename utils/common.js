@@ -1,5 +1,11 @@
 import os from 'os'
 import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+//  定义__filename和__dirname
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 /**
  * @description 获取本地服务器的IP地址
@@ -41,13 +47,16 @@ export const getCountElementsInArray = (arr, count) => {
  * @returns {Array} 返回数组
  */
 export const readDataFromTxt = (fileName) => {
-  const data = []
-  const filePath = `../assets/data/${fileName}.txt`
+  let data = []
+  const filePath = path.resolve(__dirname, `../assets/data/${fileName}.txt`)
+  if (!fs.existsSync(filePath)) {
+    console.error(`${filePath}文件不存在!!!`)
+    return
+  }
   try {
     data = fs.readFileSync(filePath, 'utf-8')
-    console.log('data', data)
   } catch (err) {
     console.error(err)
   }
-  return data.split('\n')
+  return data.replace(/\r/g, '').split('\n')
 }

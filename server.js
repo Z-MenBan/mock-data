@@ -29,5 +29,5 @@ app.get('/test', (req, res) => {
 
 // 监听端口
 app.listen(port, () => {
-  console.log(`Server is running on ${localhostIP}:${port}`);
+  console.log(`Server is running on http://${localhostIP}:${port}`);
 })

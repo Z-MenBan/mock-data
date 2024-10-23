@@ -23,12 +23,9 @@ export const getGameList = (objName = "objectName", min, max) => {
   const randomArray = getArrayElementInRangeWithAttrName('游戏名', ['游戏1', '游戏2', '游戏3'], 0, 1)
   const randomPic = getPicAddressInRangeWithAttrName("图片", 200, 300)
   console.log(randomNumber)
-  console.log(typeof randomNumber)
   console.log(randomArray)
-  console.log(typeof randomArray)
   console.log(randomPic)
-  console.log(typeof randomPic)
   const txtData = readDataFromTxt('game_list')
   console.log(txtData)
-  console.log(typeof txtData)
+
 }
