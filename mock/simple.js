@@ -28,3 +28,20 @@ export function getCountElementsInArray(arr, count) {
   return Random.shuffle(arr).slice(0, count)
 }
 
+
+/**
+ * @description 获取布尔值
+ * @returns {Boolean} 返回布尔值
+ */
+export function getBoolean() {
+  return Random.boolean()
+}
+
+
+/**
+ * @description 随机获取id,使用id()方法
+ * @returns {String} 返回id
+ */
+export function getId() {
+  return Random.id()
+}

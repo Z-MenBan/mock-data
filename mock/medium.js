@@ -7,6 +7,8 @@ import Random from './simple.js';
 
 import { 
   getIntegerInRange, 
+  getBoolean,
+  getId,
   getCountElementsInArray
 } from "./simple.js";
 
@@ -22,6 +24,19 @@ export function getIntegerInRangeWithAttrName(attrName = "number", min, max) {
     [attrName]: getIntegerInRange(min, max)
   }
 }
+
+
+/**
+ * @description 获取布尔值
+ * @param {String} attrName 属性名
+ * @returns {Boolean} 返回布尔值
+ */
+export function getBooleanWithAttrName(attrName = "boolean") {
+  return {
+    [attrName]: getBoolean()
+  }
+}
+
 
 
 /**
@@ -54,4 +69,16 @@ export function getArrayElementInRangeWithAttrName(attrName, arr, min = 0, max =
  */
 export function getPicAddressInRangeWithAttrName(attrName, width, height) {
   return {[attrName]: `https://picsum.photos/${width}/${height}`}
+}
+
+
+/**
+ * @description 获取随机id  使用id()
+ * @param {String} attrName 属性名
+ * @returns {String} 返回id
+ */
+export function getIdWithAttrName(attrName = "id") {
+  return {
+    [attrName]: getId()
+  }
 }
